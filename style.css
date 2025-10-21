@@ -1,0 +1,207 @@
+/* ---------------------------------- */
+/* RÀZ et Typographie de Base */
+/* ---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f6f9; /* Fond légèrement gris */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* ---------------------------------- */
+/* En-tête (Header) et Navigation */
+/* ---------------------------------- */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative; /* Important pour le positionnement du menu mobile */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2196F3; /* Bleu primaire */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2196F3;
+}
+
+.cta-login {
+    border: 1px solid #2196F3;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+/* ---------------------------------- */
+/* Section Héro (Hero) */
+/* ---------------------------------- */
+#hero {
+    text-align: center;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+}
+
+#hero h1 {
+    font-size: 2.8em;
+    color: #1a237e; /* Bleu foncé pour le contraste */
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FF5722; /* Orange vif pour l'appel à l'action */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #E64A19;
+    transform: translateY(-2px);
+}
+
+.trusted {
+    margin-top: 15px;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------- */
+/* Section Fonctionnalités */
+/* ---------------------------------- */
+#fonctionnalites {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#fonctionnalites h2 {
+    margin-bottom: 40px;
+    color: #1a237e;
+    font-size: 2em;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #f8f8ff; /* Bleu très pâle */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+    color: #2196F3;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* ---------------------------------- */
+/* Pied de Page (Footer) */
+/* ---------------------------------- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------- */
+/* Styles Spécifiques au Menu Mobile (Géré par JS) */
+/* ---------------------------------- */
+
+/* Par défaut, cacher le bouton de bascule sur grand écran */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Media Query pour les écrans de moins de 768px (tablettes et mobiles) */
+@media (max-width: 768px) {
+    /* Afficher le bouton de bascule */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Style des liens sur mobile */
+    .nav-links {
+        display: none; /* Les liens sont cachés par défaut */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Déplacer sous la barre de navigation */
+        left: 0;
+        background-color: #ffffff;
+        border-top: 1px solid #eee;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1000; /* Assure que le menu est au-dessus du reste du contenu */
+    }
+
+    .nav-links a {
+        margin: 0;
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* La classe 'active' est ajoutée par le JavaScript pour afficher le menu */
+    .nav-links.active {
+        display: flex; 
+    }
+}
